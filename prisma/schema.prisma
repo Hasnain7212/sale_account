@@ -38,7 +38,7 @@ model Invoice {
   number      String        @unique
   date        DateTime
   dueDate     DateTime
-  status      InvoiceStatus @default(DRAFT)
+  status      String        @default("DRAFT")
   customerId  String
   customer    Customer      @relation(fields: [customerId], references: [id])
   userId      String
@@ -61,9 +61,4 @@ model InvoiceItem {
   updatedAt   DateTime @updatedAt
 }
 
-enum InvoiceStatus {
-  DRAFT
-  SENT
-  PAID
-  CANCELLED
-}
+
