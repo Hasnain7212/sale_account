@@ -11,7 +11,10 @@
     "prepare": "prisma generate",
     "test": "jest",
     "db:push": "prisma db push",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "deploy": "powershell ./deploy.ps1",
+    "vercel-build": "prisma generate && prisma db push && next build",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
